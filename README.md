@@ -1,4 +1,6 @@
 Stock Tracker Project
+
+
 This project is a stock tracking application built with React for the frontend, Node.js for the backend, and PostgreSQL as the database using Prisma. Material-UI is used for components, and Tailwind CSS is used for styling.
 
 Features
