@@ -17,7 +17,7 @@ const StockInfo: React.FC = () => {
   }, []);
 
   if (!stockData) {
-    return <div>Loading stock data...</div>;
+    return <div className="text-center text-gray-500">Loading stock data...</div>;
   }
 
   // Process the stock data as needed
@@ -26,15 +26,17 @@ const StockInfo: React.FC = () => {
   const latestData = timeSeries[latestTime];
 
   return (
-    <div>
-      <h2>IBM Stock Information</h2>
-      <p>Time: {latestTime}</p>
-      <p>Open: {latestData['1. open']}</p>
-      <p>High: {latestData['2. high']}</p>
-      <p>Low: {latestData['3. low']}</p>
-      <p>Close: {latestData['4. close']}</p>
-      <p>Volume: {latestData['5. volume']}</p>
+    <div className="bg-white p-6 rounded-lg shadow-md">
+    <h2 className="text-2xl font-bold mb-4">IBM Stock Information</h2>
+    <div className="space-y-2">
+      <p><span className="font-semibold">Time:</span> {latestTime}</p>
+      <p><span className="font-semibold">Open:</span> {latestData['1. open']}</p>
+      <p><span className="font-semibold">High:</span> {latestData['2. high']}</p>
+      <p><span className="font-semibold">Low:</span> {latestData['3. low']}</p>
+      <p><span className="font-semibold">Close:</span> {latestData['4. close']}</p>
+      <p><span className="font-semibold">Volume:</span> {latestData['5. volume']}</p>
     </div>
+  </div>
   );
 };
 

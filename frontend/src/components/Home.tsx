@@ -21,7 +21,7 @@ const Home: React.FC = () => {
       fetchWatchlist();
     }
   }, [userId]);
-  
+
   const handleAddStock = async (stock: string) => {
     try {
       await axios.post('/watchlist', { stock, userId });
@@ -32,11 +32,11 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-      <div style={{ flex: 1 }}>
+    <div className="flex flex-col md:flex-row gap-4 p-4">
+      <div className="flex-1 bg-white p-6 rounded-lg shadow-md">
         <StockInfo />
       </div>
-      <div style={{ width: '30%' }}>
+      <div className="w-full md:w-1/3 bg-white p-6 rounded-lg shadow-md">
         <Watchlist stocks={watchlist} onAddStock={handleAddStock} />
       </div>
     </div>

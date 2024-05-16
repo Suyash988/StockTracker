@@ -28,13 +28,13 @@ model Watchlist {
   name   String
   userId String  @db.Uuid
   user   User    @relation(fields: [userId], references: [id])
-  stock Stock[]
+  // stock Stock[]
 }
 
-model Stock {
-  id          String    @id @default(uuid()) @db.Uuid
-  symbol      String
-  company     String
-  watchlistId String    @db.Uuid
-  watchlist   Watchlist @relation(fields: [watchlistId], references: [id])
-}
+// model Stock {
+//   id          String    @id @default (uuid()) @db.Uuid
+//   symbol      String
+//   company     String
+//   watchlistId String    @db.Uuid
+//   watchlist   Watchlist @relation(fields: [watchlistId], references: [id])
+// }
